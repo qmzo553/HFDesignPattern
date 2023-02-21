@@ -5,20 +5,14 @@ import java.util.*;
 public abstract class Pizza {
 	
 	String name;
-	String dough;
-	String sauce;
-	List<String> toppings = new ArrayList<String>();
+	Dough dough;
+	Sauce sauce;
+	Veggies veggies[];
+	Cheese cheese;
+	Pepperoni pepperoni;
+	Clams clam;
 	
-	void prepare() {
-		System.out.println("준비 중: " + name);
-		System.out.println("도우를 돌리는 중 ....");
-		System.out.println("소스를 뿌리는 중 ....");
-		System.out.println("토핑을 올리는 중 ....");
-		
-		for(String topping : toppings) {
-			System.out.println(" " + topping);
-		}
-	}
+	abstract void prepare();
 	
 	void bake() {
 		System.out.println("175도에서 25분 간 굽기");
@@ -32,7 +26,46 @@ public abstract class Pizza {
 		System.out.println("상자에 피자 담기");
 	}
 	
+	void setName(String name) {
+		this.name = name;
+	}
+	
 	public String getName() {
 		return name;
+	}
+	
+	public String toString() {
+		StringBuffer result = new StringBuffer();
+		result.append("---- " + name + " ----\n");
+		if (dough != null) {
+			result.append(dough);
+			result.append("\n");
+		}
+		if (sauce != null) {
+			result.append(sauce);
+			result.append("\n");
+		}
+		if (cheese != null) {
+			result.append(cheese);
+			result.append("\n");
+		}
+		if (veggies != null) {
+			for (int i = 0; i < veggies.length; i++) {
+				result.append(veggies[i]);
+				if (i < veggies.length-1) {
+					result.append(", ");
+				}
+			}
+			result.append("\n");
+		}
+		if (clam != null) {
+			result.append(clam);
+			result.append("\n");
+		}
+		if (pepperoni != null) {
+			result.append(pepperoni);
+			result.append("\n");
+		}
+		return result.toString();
 	}
 }
