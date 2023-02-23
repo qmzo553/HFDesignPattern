@@ -1,12 +1,12 @@
 package RemoteTest;
 
-public class GarageDoorOpenCommand implements Command {
+public class GarageDoorDownCommand implements Command {
 	GarageDoor garageDoor;
-	
-	public GarageDoorOpenCommand(GarageDoor garageDoor) {
+
+	public GarageDoorDownCommand(GarageDoor garageDoor) {
 		this.garageDoor = garageDoor;
 	}
-	
+
 	public void execute() {
 		garageDoor.up();
 	}

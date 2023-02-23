@@ -1,17 +1,17 @@
 package RemoteTest;
 
-public class LightOnCommand implements Command {
+public class LightOffCommand implements Command {
 	Light light;
 	
-	public LightOnCommand(Light light) {
+	public LightOffCommand(Light light) {
 		this.light = light;
 	}
 	
 	public void execute() {
-		light.on();
+		light.off();
 	}
 	
 	public void undo() {
-		light.off();
+		light.on();
 	}
 }

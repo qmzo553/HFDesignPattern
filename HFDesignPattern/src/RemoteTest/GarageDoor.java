@@ -2,6 +2,12 @@ package RemoteTest;
 
 public class GarageDoor {
 	
+	String location;
+
+	public GarageDoor(String location) {
+		this.location = location;
+	}
+	
 	public void up() {
 		System.out.println("문이 올라갑니다.");
 	}
