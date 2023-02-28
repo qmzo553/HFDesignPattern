@@ -1,28 +1,12 @@
 package Encapsulation;
 
-public class Coffee {
+public class Coffee extends CaffeineBeverage {
 	
-	void prepareRecipe() {
-		boilWater();
-		brewCoffeeGrinds();
-		pourInCup();
-		addSugarAndMilk();
-		
-	}
-	
-	public void boilWater() {
-		System.out.println("물 끓이는 중");
-	}
-	
-	public void brewCoffeeGrinds() {
+	public void brew() {
 		System.out.println("필터로 커피를 우려내는 중");
 	}
 	
-	public void pourInCup() {
-		System.out.println("컵에 따르는 중입니다.");
-	}
-	
-	public void addSugarAndMilk() {
+	public void addCondiments() {
 		System.out.println();
 	}
 }
